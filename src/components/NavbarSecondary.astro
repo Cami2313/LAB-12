@@ -1,0 +1,45 @@
+---
+import "../styles/primary.css";
+import "../styles/secondary.css";
+import type { NavItem } from "../types/NavItem.dto";
+
+const navItems: NavItem[] = [
+  { name: 'Download' },
+  { name: 'Documentation' },
+  { name: 'Learn' },
+  { name: 'Teach' },
+  { name: 'About' },
+  { name: 'Donate' },
+];
+---
+<nav class="navbar__2">
+    <div class="logo__container">
+        <a class="link__logo" href="/">
+            <img class="logo__img" src="../../public/processing.svg" alt="Processing">
+            <div class="logo__text">
+                <p class="logo"></p>
+            </div>
+        </a>
+    </div>
+    {
+        navItems.map((items: NavItem) => (
+            <div class="navbar__secondary">
+                <ul>
+                    <li>
+                        <a class="link" href="/">
+                            <div class="link__text">
+                                <p class="text">{items.name}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        ))
+    }
+    <div class="search">
+        <input class="search__input" type="text" placeholder="Search">
+        <button class="search__button">
+            <img class="img__button" src="../../public/search.svg" alt="Search">
+        </button>
+    </div>
+</nav>

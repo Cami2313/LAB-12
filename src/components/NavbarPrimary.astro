@@ -1,0 +1,30 @@
+---
+import "../styles/primary.css";
+import type { NavItem } from "../types/NavItem.dto";
+
+const navItems: NavItem[] = [
+  { name: 'Processing Foundation', icon: '../../public/pro-foundation.svg', color: 'color: #9C51FF' },
+  { name: 'Processing', icon: '../../public/processing.svg', color: 'color: #0468FF' },
+  { name: 'p5.js', icon: '../../public/p5.svg', color: 'color: #ED225D' },
+  { name: 'Processing Android', icon: '../../public/pro-android.svg', color: 'color: #98C829' },
+  { name: 'Processing Python', icon: '../../public/pro-python.svg', color: 'color: #2D9E97' }
+];
+---
+<nav class="navbar">
+    {
+        navItems.map((items: NavItem) => (
+            <div class="navbar__primary">
+                <ul>
+                    <li>
+                        <a class="link" href="/">
+                            <img class="link__img" src={items.icon} alt={items.name}>
+                            <div class="link__text">
+                                <p class="text" style={items.color}><b>{items.name}</b></p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        ))
+    }
+</nav>
